@@ -12,6 +12,10 @@
   <packaging>jar</packaging>
   <name>Common Module</name>
 
+  <properties>
+    <sonar.moduleKey>${artifactId}</sonar.moduleKey>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>

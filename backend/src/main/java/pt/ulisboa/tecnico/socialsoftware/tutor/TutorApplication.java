@@ -40,5 +40,4 @@ public class TutorApplication extends SpringBootServletInitializer implements In
 
         demoUtils.resetDemoInfo();
     }
-
 }

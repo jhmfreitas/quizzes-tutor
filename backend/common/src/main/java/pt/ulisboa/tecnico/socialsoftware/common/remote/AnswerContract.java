@@ -5,7 +5,7 @@ import pt.ulisboa.tecnico.socialsoftware.common.dtos.tournament.ExternalStatemen
 
 public interface AnswerContract {
 
-    Integer generateQuizAndGetId(Integer creatorId, Integer courseExecutionId, ExternalStatementCreationDto quizDetails);
-
     StatementQuizDto startQuiz(Integer userId, Integer quizId);
+
+    StatementQuizDto getStatementQuiz(Integer userId, Integer quizId);
 }

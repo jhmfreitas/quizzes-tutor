@@ -11,6 +11,9 @@
   <artifactId>answer</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>answer</name>
+  <properties>
+    <sonar.moduleKey>${artifactId}</sonar.moduleKey>
+  </properties>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>

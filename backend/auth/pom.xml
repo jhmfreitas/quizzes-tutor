@@ -27,10 +27,6 @@
     </repository>-->
   </repositories>
 
-  <properties>
-    <sonar.moduleKey>${artifactId}</sonar.moduleKey>
-  </properties>
-  
   <dependencies>
     <dependency>
       <groupId>pt.ulisboa.tecnico.socialsoftware.common</groupId>

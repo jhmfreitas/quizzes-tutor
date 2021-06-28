@@ -29,10 +29,8 @@
     <eventuate-tram.version>0.29.0.RELEASE</eventuate-tram.version>
     <eventuate-tram-sagas.version>0.18.0.RELEASE</eventuate-tram-sagas.version>
     <sonar.projectKey>jhmfreitas_quizzes-tutor_microservices</sonar.projectKey>
-    <sonar.moduleKey>${artifactId}</sonar.moduleKey>
     <sonar.organization>jhmfreitas</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <sonar.modules>answer,apigateway,auth,common,discussion,execution,impexp,question,questionsubmission,quiz,statistics,tournament,tutor,user</sonar.modules>
   </properties>
 
   <!-- Allows multiple properties files-->

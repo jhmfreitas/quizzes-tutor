@@ -32,7 +32,7 @@
     <sonar.moduleKey>${artifactId}</sonar.moduleKey>
     <sonar.organization>jhmfreitas</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    <sonar.modules>backend,answer,apigateway,auth,common,discussion,execution,impexp,question,questionsubmission,quiz,statistics,tournament,tutor,user</sonar.modules>
+    <sonar.modules>answer,apigateway,auth,common,discussion,execution,impexp,question,questionsubmission,quiz,statistics,tournament,tutor,user</sonar.modules>
   </properties>
 
   <!-- Allows multiple properties files-->

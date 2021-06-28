@@ -26,11 +26,6 @@
       <url>https://dl.bintray.com/eventuateio-oss/microservice-canvas-tools-release</url>
     </repository>-->
   </repositories>
-
-  <properties>
-    <sonar.moduleKey>${artifactId}</sonar.moduleKey>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>pt.ulisboa.tecnico.socialsoftware.common</groupId>

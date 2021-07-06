@@ -43,7 +43,6 @@ import static pt.ulisboa.tecnico.socialsoftware.tutor.user.UserService.MAIL_FORM
 
 @Service
 public class AuthUserProvidedService {
-
     @Autowired
     private AuthUserRepository authUserRepository;
 

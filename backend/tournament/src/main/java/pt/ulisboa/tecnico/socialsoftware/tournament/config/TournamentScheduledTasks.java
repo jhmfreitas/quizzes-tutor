@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 import pt.ulisboa.tecnico.socialsoftware.tournament.demoutils.TournamentDemoUtils;
 
 @Component
-public class ScheduledTasks {
+public class TournamentScheduledTasks {
 
-    @Autowired
-    private TournamentDemoUtils tournamentDemoUtils;
+	@Autowired
+	private TournamentDemoUtils tournamentDemoUtils;
 
-    @Scheduled(cron = "0 0 1 * * *")
+	@Scheduled(cron = "0 0 1 * * *")
     public void resetDemoInfo() {
-        tournamentDemoUtils.resetDemoInfo();
-    }
+		tournamentDemoUtils.resetDemoInfo();
+	}
 }

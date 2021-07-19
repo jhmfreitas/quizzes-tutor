@@ -5,7 +5,16 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 import pt.ulisboa.tecnico.socialsoftware.auth.domain.AuthExternalUser
 import pt.ulisboa.tecnico.socialsoftware.auth.domain.UserSecurityInfo
+
+<<<<<<< HEAD:backend/apigateway/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/apigateway/webservice/execution/DeleteExternalInactiveUsersWebServiceIT.groovy
+
+
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.course.CourseType
+
+=======
+>>>>>>> microservices:backend/tutor/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/tutor/execution/webservice/DeleteExternalInactiveUsersWebServiceIT.groovy
+
+
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.user.Role
 import pt.ulisboa.tecnico.socialsoftware.tutor.SpockTest
 import pt.ulisboa.tecnico.socialsoftware.tutor.execution.domain.CourseExecution
@@ -39,7 +48,7 @@ class DeleteExternalInactiveUsersWebServiceIT extends SpockTest {
 
     def "there are two inactive external user and deletes them"() {
         given: "two inactive external users"
-        user1 = new User(USER_1_NAME, USER_1_USERNAME, Role.STUDENT, false)
+        user1 = new User(USER_1_NAME, USER_1_USERNAME, Role.STUDENT)
         user1.addCourse(courseExecution1)
         courseExecution1.addUser(user1)
         user1.setActive(false)
@@ -48,7 +57,7 @@ class DeleteExternalInactiveUsersWebServiceIT extends SpockTest {
         authUser1.addCourseExecution(courseExecution1.getId())
         authUserRepository.save(authUser1)
 
-        user2 = new User(USER_2_NAME, USER_2_USERNAME, Role.TEACHER, false)
+        user2 = new User(USER_2_NAME, USER_2_USERNAME, Role.TEACHER)
         user2.addCourse(courseExecution1)
         courseExecution1.addUser(user2)
         user2.setActive(false)

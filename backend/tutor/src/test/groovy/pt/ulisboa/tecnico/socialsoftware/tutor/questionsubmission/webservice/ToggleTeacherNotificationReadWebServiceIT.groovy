@@ -5,7 +5,16 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 import pt.ulisboa.tecnico.socialsoftware.auth.domain.AuthExternalUser
 import pt.ulisboa.tecnico.socialsoftware.auth.domain.UserSecurityInfo
+
+<<<<<<< HEAD:backend/apigateway/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/apigateway/webservice/questionsubmission/ToggleTeacherNotificationReadWebServiceIT.groovy
+
+
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.course.CourseType
+
+=======
+>>>>>>> microservices:backend/tutor/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/tutor/questionsubmission/webservice/ToggleTeacherNotificationReadWebServiceIT.groovy
+
+
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.question.MultipleChoiceQuestionDto
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.question.OptionDto
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.question.QuestionDto
@@ -38,7 +47,7 @@ class ToggleTeacherNotificationReadWebServiceIT extends SpockTest {
         courseExecution = new CourseExecution(course, COURSE_1_ACRONYM, COURSE_1_ACADEMIC_TERM, CourseType.EXTERNAL, LOCAL_DATE_TOMORROW)
         courseExecutionRepository.save(courseExecution)
 
-        student = new User(USER_1_NAME, USER_1_EMAIL, Role.STUDENT, false)
+        student = new User(USER_1_NAME, USER_1_EMAIL, Role.STUDENT)
         student.addCourse(courseExecution)
         courseExecution.addUser(student)
         student.setActive(false)

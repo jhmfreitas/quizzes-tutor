@@ -7,9 +7,18 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.course.CourseType
 import pt.ulisboa.tecnico.socialsoftware.tutor.SpockTest
+
+<<<<<<< HEAD:backend/apigateway/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/apigateway/webservice/execution/GetCourseExecutionsWebServiceIT.groovy
+
+
 import pt.ulisboa.tecnico.socialsoftware.tutor.demoutils.TutorDemoUtils
+
+=======
+
 import pt.ulisboa.tecnico.socialsoftware.tutor.execution.domain.CourseExecution
 import pt.ulisboa.tecnico.socialsoftware.tutor.question.domain.Course
+
+>>>>>>> microservices:backend/tutor/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/tutor/execution/webservice/GetCourseExecutionsWebServiceIT.groovy
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class GetCourseExecutionsWebServiceIT extends SpockTest {
@@ -21,8 +30,13 @@ class GetCourseExecutionsWebServiceIT extends SpockTest {
     def setup() {
         given: 'a rest client'
         restClient = new RESTClient("http://localhost:" + port)
+<<<<<<< HEAD:backend/apigateway/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/apigateway/webservice/execution/GetCourseExecutionsWebServiceIT.groovy
+        and: 'an external course execution'
+        externalCourse = new Course("Software Engineering", CourseType.EXTERNAL)
+=======
         and: 'an external course execution, where a demo course execution already exists by default'
         externalCourse = new Course("Software Engineering", CourseType.TECNICO)
+>>>>>>> microservices:backend/tutor/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/tutor/execution/webservice/GetCourseExecutionsWebServiceIT.groovy
         courseRepository.save(externalCourse)
         externalCourseExecution = new CourseExecution(externalCourse, COURSE_1_ACRONYM, COURSE_1_ACADEMIC_TERM, CourseType.EXTERNAL, LOCAL_DATE_TOMORROW)
         courseExecutionRepository.save(externalCourseExecution)

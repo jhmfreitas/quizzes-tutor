@@ -1,4 +1,4 @@
-package pt.ulisboa.tecnico.socialsoftware.auth.services;
+package pt.ulisboa.tecnico.socialsoftware.auth.services.local;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -17,8 +17,8 @@ import java.util.Date;
 
 @Component
 public class JwtTokenProvider {
-
     private static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
+
     private static PrivateKey privateKey;
 
     private static final String PRIVATE_KEY_FILENAME = "private_key.der";

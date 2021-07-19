@@ -5,8 +5,19 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 import pt.ulisboa.tecnico.socialsoftware.auth.SpockTest
 import pt.ulisboa.tecnico.socialsoftware.auth.domain.AuthExternalUser
+
+<<<<<<< HEAD:backend/apigateway/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/apigateway/webservice/auth/GetExternalUserAuthWebServiceIT.groovy
+
+
 import pt.ulisboa.tecnico.socialsoftware.auth.domain.AuthUser
+
+=======
+
 import pt.ulisboa.tecnico.socialsoftware.auth.domain.UserSecurityInfo
+
+>>>>>>> microservices:backend/auth/src/test/groovy/pt/ulisboa/tecnico/socialsoftware/auth/webservice/GetExternalUserAuthWebServiceIT.groovy
+
+
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.course.CourseType
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.user.Role
 import pt.ulisboa.tecnico.socialsoftware.tutor.execution.domain.CourseExecution
@@ -33,7 +44,7 @@ class GetExternalUserAuthWebServiceIT extends SpockTest {
 
     def "external user makes a login"() {
         given: "one inactive user with an expired "
-        user = new User(USER_1_NAME, USER_1_EMAIL, Role.STUDENT, false)
+        user = new User(USER_1_NAME, USER_1_EMAIL, Role.STUDENT)
         user.addCourse(courseExecution)
         courseExecution.addUser(user)
         user.setActive(false)

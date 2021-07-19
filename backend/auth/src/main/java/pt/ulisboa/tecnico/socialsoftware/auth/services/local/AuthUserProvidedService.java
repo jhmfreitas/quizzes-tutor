@@ -1,4 +1,4 @@
-package pt.ulisboa.tecnico.socialsoftware.auth.services;
+package pt.ulisboa.tecnico.socialsoftware.auth.services.local;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.annotation.Backoff;
@@ -28,7 +28,6 @@ import pt.ulisboa.tecnico.socialsoftware.common.exceptions.TutorException;
 import pt.ulisboa.tecnico.socialsoftware.common.utils.DateHandler;
 import pt.ulisboa.tecnico.socialsoftware.tutor.demoutils.TutorDemoUtils;
 import pt.ulisboa.tecnico.socialsoftware.tutor.execution.domain.CourseExecution;
-import pt.ulisboa.tecnico.socialsoftware.tutor.question.CourseService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -52,9 +51,6 @@ public class AuthUserProvidedService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private CourseService courseService;
 
     @Retryable(
             value = { SQLException.class },
@@ -300,13 +296,6 @@ public class AuthUserProvidedService {
         AuthUser authUser = getDemoAdmin();
         List<CourseExecutionDto> courseExecutionList = getCourseExecutions(authUser);
         return authUser.getAuthDto(JwtTokenProvider.generateToken(authUser), null, courseExecutionList);
-    }
-
-    @Transactional(isolation = Isolation.READ_COMMITTED)
-    public boolean userHasAnExecutionOfCourse(int userId, int courseId) {
-        return courseService.findCourseWithCourseExecutionsById(courseId)
-                .stream()
-                .anyMatch(courseExecution ->  authUserRepository.countUserCourseExecutionsPairById(userId, courseExecution.getCourseExecutionId()) == 1);
     }
 
     //Was from user service

@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.execution.CourseExecutionDto;
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.user.Role;
 import pt.ulisboa.tecnico.socialsoftware.common.dtos.user.UserDto;
-import pt.ulisboa.tecnico.socialsoftware.common.events.DeleteAuthUserEvent;
+import pt.ulisboa.tecnico.socialsoftware.common.events.auth.DeleteAuthUserEvent;
 import pt.ulisboa.tecnico.socialsoftware.common.exceptions.TutorException;
 import pt.ulisboa.tecnico.socialsoftware.tutor.execution.domain.CourseExecution;
 import pt.ulisboa.tecnico.socialsoftware.tutor.quiz.repository.CourseExecutionRepository;
@@ -44,10 +44,10 @@ public class UserService {
     public UserDto createUser(String name, Role role, String username, boolean isActive, boolean isAdmin) {
         User user;
         if (username == null) {
-            user = new User(name, role, isAdmin);
+            user = new User(name, role);
         }
         else {
-            user = new User(name, username, role, isAdmin);
+            user = new User(name, username, role);
         }
         user.setActive(isActive);
         userRepository.save(user);

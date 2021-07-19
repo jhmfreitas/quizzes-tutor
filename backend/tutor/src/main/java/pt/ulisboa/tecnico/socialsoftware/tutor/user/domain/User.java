@@ -42,9 +42,6 @@ public class User implements DomainEntity {
     private String name;
 
     @Column(columnDefinition = "boolean default false")
-    private Boolean admin;
-
-    @Column(columnDefinition = "boolean default false")
     private Boolean active;
 
     private String username;
@@ -83,18 +80,16 @@ public class User implements DomainEntity {
     public User() {
     }
 
-    public User(String name, String username, Role role, boolean isAdmin){
+    public User(String name, String username, Role role){
         setName(name);
         setRole(role);
-        setAdmin(isAdmin);
         setCreationDate(DateHandler.now());
         setUsername(username);
     }
 
-    public User(String name, Role role, boolean isAdmin){
+    public User(String name, Role role){
         setName(name);
         setRole(role);
-        setAdmin(isAdmin);
         setCreationDate(DateHandler.now());
     }
 
@@ -120,14 +115,6 @@ public class User implements DomainEntity {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public boolean getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Boolean admin) {
-        this.admin = admin;
     }
 
     public Set<Discussion> getDiscussions() {
@@ -169,14 +156,6 @@ public class User implements DomainEntity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public boolean isAdmin() {
-        return this.admin != null && this.admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
     }
 
     public Role getRole() {
@@ -389,8 +368,7 @@ public class User implements DomainEntity {
                 ", numberOfCorrectTeacherAnswers=" + numberOfCorrectTeacherAnswers +
                 ", numberOfCorrectInClassAnswers=" + numberOfCorrectInClassAnswers +
                 ", numberOfCorrectStudentAnswers=" + numberOfCorrectStudentAnswers +
-                ", creationDate=" + creationDate /*+
-                ", lastAccess=" + authUser.getLastAccess() */+
+                ", creationDate=" + creationDate +
                 '}';
     }
 
@@ -548,7 +526,6 @@ public class User implements DomainEntity {
         dto.setRole(getRole().toString());
         dto.setActive(isActive());
         dto.setCreationDate(DateHandler.toISOString(getCreationDate()));
-        //dto.setLastAccess(DateHandler.toISOString(getAuthUser().getLastAccess()));
         return dto;
     }
 

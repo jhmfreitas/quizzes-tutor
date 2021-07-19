@@ -113,7 +113,7 @@ class BeanConfiguration {
         return new EventBus()
     }
 
-   @Bean
+    @Bean
     MonolithService monolithService() {
         return new MonolithService()
     }
